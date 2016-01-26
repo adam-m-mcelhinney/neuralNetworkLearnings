@@ -116,3 +116,25 @@ y_derivative = (forwardCircuit(x, y + h, z) - forwardCircuit(x, y, z))/h
 z_derivative = (forwardCircuit(x, y, z + h) - forwardCircuit(x, y, z))/h
 
 print x_derivative, y_derivative, z_derivative
+
+
+# Example, Single Neuron
+
+class Units:
+    def __init__(self, value, grad):
+        self.value = value
+        self.grad = grad
+
+class multiplyGate:
+    def __init__(self, unit1, unit2):
+        self.unit1 = unit1
+        self.unit2 = unit2
+
+    def forward(self):
+        self.utop = Units(self.unit1.value * self.unit2.value, 0)
+
+    def backword(self):
+        self.unit1.grad += self.unit2.value * self.utop.grad
+        self.unit2.grad += self.unit1.value * self.utop.grad
+
+
