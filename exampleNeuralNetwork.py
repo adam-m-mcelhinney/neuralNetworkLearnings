@@ -6,6 +6,8 @@ Created on Tue Jan 26 09:49:55 2016
 
 
 Example Neural Network
+
+Modified from here: http://www.wildml.com/2015/09/implementing-a-neural-network-from-scratch/
 """
 
 # Package imports
